@@ -1,0 +1,13 @@
+---
+description: Project conventions and guidance
+alwaysApply: true
+---
+
+# Project Rules
+
+- Prefer the simplest approach that works. Avoid unnecessary abstraction, config, or dependencies.
+- Before making a change, apply the appropriate design patterns (creational, structural, behavioral, etc.) when they fit the problem.
+- Before changing any code, consider its blast radius: what else it touches, breaks, or forces to change. Prefer narrow, local edits.
+- Prefer the latest stable versions of libraries and dependencies when adding or upgrading them.
+- For Python work, always use a `.venv` virtual environment (create one if it does not exist) and run/install within it.
+- Confirm the user's request is clearly understood before executing or changing code. Ask briefly if anything material is ambiguous.
