@@ -11,3 +11,5 @@ alwaysApply: true
 - Prefer the latest stable versions of libraries and dependencies when adding or upgrading them.
 - For Python work, always use a `.venv` virtual environment (create one if it does not exist) and run/install within it.
 - Confirm the user's request is clearly understood before executing or changing code. Ask briefly if anything material is ambiguous.
+- Keep prompts out of code. Store them in a separate YAML file and load from there.
+- Never commit or push changes without the user's explicit consent or request.
