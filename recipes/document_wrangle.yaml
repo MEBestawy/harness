@@ -1,0 +1,28 @@
+id: document_wrangle
+title: Document wrangling
+description: Turn a folder of documents into a structured table or summary pack you can spot-check.
+version: 1
+max_steps: 40
+max_duration_secs: 600
+default_budget_usd: 2.00
+workspace_required: true
+tools_allowlist:
+  - list_dir
+  - read_file
+  - write_file
+  - ask_user
+permissions:
+  read: allow
+  write: ask
+  network: deny
+  external_path: deny
+  ask_user: allow
+  doom_loop: ask
+prompts:
+  plan: recipe_document_wrangle.plan
+  act: recipe_document_wrangle.act
+output:
+  kind: files
+  suggested_paths:
+    - harness-output/summary.md
+    - harness-output/table.csv

@@ -1,3 +1,14 @@
 .DS_Store
 .env
 .venv
+node_modules/
+dist/
+src-tauri/target/
+target/
+*.log
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+*.local
+.cargo-cache/

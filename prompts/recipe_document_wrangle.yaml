@@ -1,0 +1,29 @@
+- id: plan
+  description: Produce a short plan before touching files
+  template: |
+    You are planning a document-wrangling job inside a scoped workspace.
+    Goal: {{goal}}
+    Workspace: {{workspace}}
+
+    List the steps you will take (read which files, how you will structure output).
+    Do not modify files yet. Ask at most 3 multiple-choice clarifying questions if the goal is ambiguous.
+    Prefer recognition (options) over asking the user to write a long prompt.
+  variables:
+    - goal
+    - workspace
+
+- id: act
+  description: Execute an approved plan with tools
+  template: |
+    You are executing an approved plan for document wrangling.
+    Approved plan:
+    {{plan}}
+
+    Rules:
+    - Stay inside the workspace unless explicitly allowed.
+    - Use tools; do not invent file contents.
+    - Write outputs under harness-output/ unless the user specified otherwise.
+    - If stuck, ask_user with multiple choice rather than looping.
+    - Stop when the deliverable is written and briefly say what to spot-check.
+  variables:
+    - plan
